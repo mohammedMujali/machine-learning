@@ -1,2 +1,1 @@
-asse
-
+This project focuses on analyzing gym members’ exercise data and using machine learning techniques to understand patterns in physical activity. The goal of the project is to explore the dataset, prepare the data, and build models that can help analyze or predict exercise-related information.
