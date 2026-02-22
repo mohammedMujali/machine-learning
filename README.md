@@ -1,4 +1,4 @@
-🏋️ Gym Members Exercise Analysis
+###🏋️ Gym Members Exercise Analysis
 📌 Project Overview
 
 This project analyzes gym members' exercise tracking data.
