@@ -1,91 +1,69 @@
-# README - 02 Logistic Regression Assignment: Gym Dataset
-
-## File
-`02-Logistic_Regression_Assignment_All_Gym_Executed.ipynb`
+# 02 - Logistic Regression Assignment
 
 ## Dataset Used
-`gym_members_exercise_tracking.csv`
 
-This notebook was changed so the full assignment uses the gym members exercise tracking dataset instead of the original advertising or Titanic datasets.
+This assignment uses the **advertising.csv** dataset.
 
-## Main Goal
-The notebook uses Logistic Regression to predict whether a workout session has a high calorie burn.
+The dataset is used to build a Logistic Regression model that predicts whether a user clicked on an advertisement based on user information and advertising-related features.
 
-The target column created is:
+## Files Needed
 
-`High_Calorie_Burn`
+Make sure these files are in the same folder:
 
-This target is based on the median value of `Calories_Burned`:
+- `02-Logistic Regression Assignment.ipynb`
+- `advertising.csv`
 
-- `1` = calories burned is above the median
-- `0` = calories burned is equal to or below the median
+## Project Goal
 
-## Changes Made
+The goal of this notebook is to apply Logistic Regression to an advertising dataset and predict the target column:
 
-- Loaded `gym_members_exercise_tracking.csv`
-- Removed the old advertising/Titanic dataset workflow
-- Created a binary classification target called `High_Calorie_Burn`
-- Used `Calories_Burned` only to create the target, then removed it from the model inputs to avoid data leakage
-- Split the data into training and testing sets
-- Added preprocessing for:
-  - numeric columns using `StandardScaler`
-  - categorical columns using `OneHotEncoder`
-- Built a `Pipeline` with preprocessing and `LogisticRegression`
-- Trained the logistic regression model
-- Generated predictions and prediction probabilities
-- Evaluated the model using:
-  - accuracy score
-  - confusion matrix
-  - classification report
-- Added visualizations for gym data, including:
-  - target distribution
-  - workout type counts
-  - high calorie burn rate by gender
-  - high calorie burn rate by workout type
-  - confusion matrix
+- `Clicked on Ad`
 
-## Libraries Required
+This is a binary classification problem:
+
+- `1` = user clicked on the ad
+- `0` = user did not click on the ad
+
+## Main Steps in the Notebook
+
+1. Import required libraries
+2. Load the `advertising.csv` dataset
+3. Explore the dataset using basic EDA
+4. Check columns, missing values, and data types
+5. Prepare the feature variables and target variable
+6. Split the data into training and testing sets
+7. Train a Logistic Regression model
+8. Make predictions
+9. Evaluate the model using:
+   - Confusion Matrix
+   - Classification Report
+   - Accuracy Score
+
+## Target Variable
+
+The target column is:
+
+```python
+Clicked on Ad
+```
+
+## Model Used
 
 The notebook uses:
 
 ```python
-pandas
-numpy
-matplotlib
-scikit-learn
+LogisticRegression
 ```
+
+from `sklearn.linear_model`.
 
 ## How to Run
 
-1. Keep these two files in the same folder:
-   - `02-Logistic_Regression_Assignment_All_Gym_Executed.ipynb`
-   - `gym_members_exercise_tracking.csv`
+1. Open the notebook in Jupyter Notebook or Google Colab.
+2. Upload or place `advertising.csv` in the same directory.
+3. Run each cell from top to bottom.
+4. Review the final model evaluation results.
 
-2. Open the notebook in Jupyter Notebook, JupyterLab, Google Colab, or VS Code.
+## Notes
 
-3. Run all cells from top to bottom.
-
-## Important Columns
-
-The model uses gym workout features such as:
-
-- age
-- gender
-- weight
-- height
-- max BPM
-- average BPM
-- resting BPM
-- session duration
-- workout type
-- fat percentage
-- water intake
-- workout frequency
-- experience level
-- BMI
-
-The model does not directly use `Calories_Burned` as an input because it is used to create the target column.
-
-## Final Output
-
-At the end of the notebook, the model shows how well Logistic Regression predicts whether a workout belongs to the high calorie burn group or the low calorie burn group.
+This README is for the **advertising dataset version**, not the gym dataset version.
